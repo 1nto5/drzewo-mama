@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1e1e2e">
+<title>Akty (mama) — Drzewo mamy</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrains-mono-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  (function () {
+    var t;
+    try { t = localStorage.getItem("aa_theme"); } catch (e) {}
+    if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    document.documentElement.dataset.theme = t;
+    document.querySelector('meta[name="theme-color"]').content = t === "light" ? "#eff1f5" : "#1e1e2e";
+  })();
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="akty-mama">
+<div class="wrap">
+<div id="chrome"></div>
+<main id="main">
+<section class="page-h">
+  <h1>Akty<span class="dot">.</span></h1>
+  <p class="lead">Akty metrykalne, na których stoi drzewo mamy. Akty z 1892 i 1901 r. pisano po rosyjsku (tu jest tłumaczenie), późniejsze po polsku — obok cytatu jest wersja po współczesnemu. Skan otwiera się w serwisie metryki.genealodzy.pl; skanów tu nie przechowujemy.</p>
+</section>
+<h2>Szukaj</h2>
+<div class="filters" id="filters">
+  <label class="field wide">szukaj w treści, imionach i nazwiskach<input id="f-q" type="search" placeholder="np. Domian, Czarnia, gospodarz" autocomplete="off"></label>
+  <label class="field">rodzaj<select id="f-typ"><option value="">wszystkie</option><option value="chrzest">chrzest</option><option value="ślub">ślub</option><option value="zgon">zgon</option></select></label>
+  <label class="field">pokolenie<select id="f-gen"></select></label>
+  <label class="field">osoba<select id="f-osoba"></select></label>
+  <label class="field">pewność odczytu<select id="f-odczyt"><option value="">wszystkie</option><option value="sprawdzone">sprawdzone osobiście</option><option value="2 odczyty">2 odczyty</option><option value="1 odczyt">1 odczyt</option><option value="indeks">tylko indeks</option></select></label>
+  <label class="field">od roku<input id="f-od" type="number" inputmode="numeric"></label>
+  <label class="field">do roku<input id="f-do" type="number" inputmode="numeric"></label>
+</div>
+<p class="count"><span id="count"></span><button class="btn" type="button" id="reset">Wyczyść filtry</button></p>
+<ol class="acts" id="acts"></ol>
+<h2 id="slowniczek">Słowniczek</h2>
+<dl class="gloss" id="gloss"></dl>
+</main>
+<footer class="foot" id="foot"></footer>
+</div>
+<script src="data/mama.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/pages.js"></script>
+</body>
+</html>

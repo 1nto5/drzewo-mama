@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1e1e2e">
+<title>Ciekawostki (mama) — Drzewo mamy</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrains-mono-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  (function () {
+    var t;
+    try { t = localStorage.getItem("aa_theme"); } catch (e) {}
+    if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    document.documentElement.dataset.theme = t;
+    document.querySelector('meta[name="theme-color"]').content = t === "light" ? "#eff1f5" : "#1e1e2e";
+  })();
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="ciekawostki-mama">
+<div class="wrap">
+<div id="chrome"></div>
+<main id="main">
+<section class="page-h">
+  <h1>Ciekawostki<span class="dot">.</span></h1>
+  <p class="lead">Historie z okolic Szczytna, Kurpi i północnego Mazowsza, związane z miejscami i latami życia przodków. Każda ma źródło i oznaczenie: fakt o rodzinie, kontekst albo hipoteza.</p>
+</section>
+<div class="chips chips-bar" id="chips" role="group" aria-label="Rodzaj"></div>
+<ul class="cards" id="cards"></ul>
+</main>
+<footer class="foot" id="foot"></footer>
+</div>
+<script src="data/mama.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/pages.js"></script>
+</body>
+</html>
